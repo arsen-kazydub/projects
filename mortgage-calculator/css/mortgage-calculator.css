@@ -25,10 +25,11 @@
   }
 
   .mc-result {
-    h3 {
+    overflow: hidden;
+    h4 {
       line-height: 3rem;
       margin: 0;
-      background: #e9ecef;
+      background: var(--bs-tertiary-bg);
     }
     .mc-values {
       max-width: 300px;
