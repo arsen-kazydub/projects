@@ -1,34 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mortgage Calculator</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://arsen.pro/wp-content/themes/arsen/css/shared.css">
-  <link rel="stylesheet" href="css/mortgage-calculator.css">
-  <script src="js/mortgage-calculator.js"></script>
-  <script>
-    // Initialization
-    document.addEventListener('DOMContentLoaded', () => {
-      const root = document.getElementById('mortgage-calculator');
-      if (root) {
-        new MortgageCalculator(root, {
-          price: 500000,
-          maxPrice: 1000000,
-        });
-      }
-    });
-  </script>
-</head>
+<?php
 
-<body>
-<div id="wrapper" class="container-xxl">
+$page = [
+  'title' => 'Mortgage Calculator',
+  'styles' => ['css/mortgage-calculator.css'],
+  'scripts' => ['js/mortgage-calculator.js'],
+];
 
-  <h1>Mortgage Calculator</h1>
+require_once __DIR__ . '/../_shared/header.php';
+
+?>
+
+  <h1><?= $page['title'] ?></h1>
 
   <div id="mortgage-calculator">
     <div class="mc-form d-flex flex-column gap-3">
@@ -107,6 +89,18 @@
     </div><!-- / .mc-result -->
   </div><!-- / #mortgage-calculator -->
 
-</div><!-- / #wrapper -->
-</body>
-</html>
+
+  <script>
+    // Initialization
+    document.addEventListener('DOMContentLoaded', () => {
+      const root = document.getElementById('mortgage-calculator');
+      if (root) {
+        new MortgageCalculator(root, {
+          price: 500000,
+          maxPrice: 1000000,
+        });
+      }
+    });
+  </script>
+
+<?php require_once __DIR__ . '/../_shared/footer.php';
