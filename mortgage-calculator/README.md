@@ -1,0 +1,1 @@
+![Mortgage Calculator](img/mortgage-calculator.png)
